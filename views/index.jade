@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  script(type="text/javascript", src="/javascripts/deferred.js" defer).
+  script(type="text/javascript" defer)
+    console.log("The defer attribute is only for external scripts (should only be used if the src attribute is present).")
+  script(type="text/javascript").
+    console.log('This is inline script')
+  script(type="text/javascript" async)
+    console.log('This is inline script with async attributes');
