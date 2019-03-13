@@ -3,11 +3,22 @@ extends layout
 block content
   script(type="text/javascript", src="/javascripts/deferred.js" defer)
   script(type="text/javascript", defer).
-    console.log("The defer attribute is only for external scripts (should only be used if the src attribute is present).")
+    console.log('This is inline defer script.');
+    console.log('The defer attribute is only for external scripts (should only be used if the src attribute is present).')
   script(type="text/javascript").
-    console.log('This is inline script')
+    console.log('This is inline script.')
+    function onImageLoad() {
+      console.log('This is script on image loaded.');
+    }
+
+    var img = document.createElement('img');
+    img.src = "/images/bmw3.png";
+    img.onload = onImageLoad;
+
+    document.body.append(img);
+
   script(type="text/javascript", async).
-    console.log('This is inline script with async attributes')
+    console.log('This is inline script with async attributes.')
   ul#slides
     each car in cars
       li.swiper-slide

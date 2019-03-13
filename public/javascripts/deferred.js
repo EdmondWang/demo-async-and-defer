@@ -1,3 +1,3 @@
 'use strict';
 
-console.log('This is script with defer attribute');
+console.log('This is external defer script');
