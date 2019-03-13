@@ -1,9 +1,10 @@
 extends layout
 
 block content
+  script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js")
   script(type="text/javascript", src="/javascripts/deferred.js" defer)
   script(type="text/javascript", defer).
-    console.log('This is inline defer script.');
+    console.log('This is inline defer script. (invalid)');
     console.log('The defer attribute is only for external scripts (should only be used if the src attribute is present).')
   script(type="text/javascript").
     console.log('This is inline script.')
@@ -18,8 +19,14 @@ block content
     document.body.append(img);
 
   script(type="text/javascript", async).
-    console.log('This is inline script with async attributes.')
+    console.log('This is inline script with async attributes. (invalid)')
   ul#slides
     each car in cars
       li.swiper-slide
         img(src=car.image, alt=car.name)
+  ul#entites
+    each auto in dummylist
+      li.entity
+        p
+          span=auto.name
+          code!=auto.code
