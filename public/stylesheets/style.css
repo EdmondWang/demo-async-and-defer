@@ -18,3 +18,26 @@ li {
     padding: 0;
     margin: 0;
 }
+
+#entites {
+    background: #FFFFFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#entites span {
+
+}
+
+#entites code {
+    display: inline-block;
+    padding: .2em;
+    background: #008CE6;
+    color: #FFFFFF;
+    border-radius: 0.2em;
+    min-width: 10px;
+    min-height: 10px;
+    text-align: center;
+    margin: 10px;
+}
